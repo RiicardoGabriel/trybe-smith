@@ -3,3 +3,7 @@ export interface IProduct {
   name: string;
   amount: string;
 }
+
+export interface IProductGet extends IProduct {
+  orderId?: number;
+}

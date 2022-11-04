@@ -7,4 +7,10 @@ async function create(product: IProduct) {
   return { status: 201, data };
 }
 
-export default { create };
+async function listProducts() {
+  const data = await productModel.listProducts();
+    
+  return { status: 200, data };
+}
+
+export default { create, listProducts };

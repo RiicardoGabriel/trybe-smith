@@ -9,4 +9,10 @@ async function create(req: Request, res: Response) {
   res.status(status).json(data);
 }
 
-export default { create };
+async function listProducts(_req: Request, res: Response) {
+  const { status, data } = await productService.listProducts();
+
+  res.status(status).json(data);
+}
+
+export default { create, listProducts };
