@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { IUser } from '../interfaces';
+import { IUser } from '../../interfaces';
 
 export default function validateUserPass(req: Request, res: Response, next: NextFunction) {
   const { username, password } = req.body as IUser;

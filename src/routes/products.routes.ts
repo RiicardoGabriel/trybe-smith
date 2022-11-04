@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
 import productController from '../controllers/productController';
-import validateProducts from '../middlewares/validateProducts';
-import validateProductsType from '../middlewares/validateProductsType';
-import validateProductsLength from '../middlewares/validateProductsLength';
+import validateProducts from '../middlewares/products/validateProducts.middleware';
+import validateProductsType from '../middlewares/products/validateProductsType.middleware';
+import validateProductsLength from '../middlewares/products/validateProductsLength.middleware';
 
 const router = Router();
 

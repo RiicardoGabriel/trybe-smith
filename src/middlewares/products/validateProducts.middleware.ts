@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { IProduct } from '../interfaces';
+import { IProduct } from '../../interfaces';
 
 export default function validateProducts(req: Request, res: Response, next: NextFunction) {
   const { name, amount } = req.body as IProduct;
