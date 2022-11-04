@@ -16,4 +16,14 @@ async function create(user: IUser): Promise<IUser> {
   return newProduct;
 }
 
-export default { create };
+async function login(username: string): Promise<IUser | null> {
+  const query = 'SELECT * FROM Trybesmith.Users WHERE username = ?';
+  const values = [username];
+
+  const [data] = await connection.execute(query, values);
+  const [user] = data as IUser[];
+
+  return user || null;
+}
+
+export default { create, login };

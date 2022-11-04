@@ -9,4 +9,15 @@ async function create(req: Request, res: Response) {
   res.status(status).json({ token });
 }
 
-export default { create };
+async function login(req: Request, res: Response) {
+  const user = req.body as IUser;
+  const { status, token, message } = await userService.login(user);
+
+  if (status === 401) {
+    return res.status(status).json({ message }); 
+  }
+
+  res.status(status).json({ token });
+}
+
+export default { create, login };
